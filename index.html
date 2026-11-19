@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<title>KMD Careers | 加入卡米达</title>
+<meta name="description" content="KMD卡米达人才招聘中心，寻找改变未来的创造者。">
+<style>
+:root{
+  --bg:#050b14;--panel:#0b1727;--panel2:#101f33;
+  --blue:#36a9ff;--cyan:#51e0ff;--text:#edf5ff;
+  --muted:#91a5bd;--line:rgba(120,175,225,.16);
+  --glow:0 0 35px rgba(39,157,255,.15);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Inter,"Microsoft YaHei",Arial,sans-serif;
+  line-height:1.65;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+    radial-gradient(ellipse at 15% 10%,rgba(20,103,190,.18),transparent 38%),
+    radial-gradient(ellipse at 85% 40%,rgba(0,190,220,.08),transparent 35%),
+    linear-gradient(rgba(35,100,160,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(35,100,160,.035) 1px,transparent 1px);
+  background-size:auto,auto,48px 48px,48px 48px;
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,92%);margin:auto}
+.nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(5,11,20,.88);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:2px}
+.logo-mark{
+  width:39px;height:39px;border:1px solid var(--cyan);
+  display:grid;place-items:center;color:var(--cyan);
+  transform:rotate(45deg);box-shadow:0 0 18px #168bcb44;
+}
+.logo-mark span{transform:rotate(-45deg);font-size:15px}
+.logo small{display:block;color:var(--muted);font-size:9px;letter-spacing:3px;font-weight:500}
+.nav-links{display:flex;gap:28px;align-items:center;color:#b5c7db;font-size:13px}
+.nav-links a:hover{color:var(--cyan)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:12px 22px;border:1px solid var(--blue);
+  background:linear-gradient(110deg,#1479ce,#12a8c5);
+  color:white;font-weight:700;letter-spacing:.5px;
+  transition:.25s;box-shadow:0 7px 25px #087ac433;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px #087ac466}
+.btn-outline{background:transparent;border-color:#39759d;color:#c8e9ff;box-shadow:none}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:white;padding:8px 12px}
+.hero{padding:105px 0 85px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:4px;font-weight:800}
+.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.13;margin:22px 0}
+.hero h1 span{color:var(--cyan);text-shadow:0 0 28px #29aaff66}
+.hero p{color:var(--muted);max-width:570px;font-size:16px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.hero-meta{display:flex;gap:32px;margin-top:50px}
+.meta strong{display:block;font-size:25px;color:#fff}
+.meta span{font-size:12px;color:var(--muted)}
+.hero-visual{
+  min-height:380px;position:relative;display:grid;place-items:center;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,#0c2037aa,#07111f88);
+  box-shadow:var(--glow);overflow:hidden;
+}
+.hero-visual:before,.hero-visual:after{
+  content:"";position:absolute;border:1px solid #39baff33;border-radius:50%;
+  width:290px;height:290px;animation:spin 22s linear infinite;
+}
+.hero-visual:after{width:220px;height:220px;animation-direction:reverse}
+.core{
+  width:150px;height:150px;display:grid;place-items:center;
+  border:1px solid var(--cyan);transform:rotate(45deg);
+  box-shadow:0 0 50px #1aaaff44,inset 0 0 35px #1aaaff22;
+  background:#0c2941aa;
+}
+.core span{transform:rotate(-45deg);font-size:35px;font-weight:900;color:var(--cyan)}
+.orbit-label{position:absolute;color:#9edfff;font-size:11px;letter-spacing:2px}
+.orbit-label.one{top:17%;left:12%}.orbit-label.two{right:9%;top:30%}
+.orbit-label.three{bottom:17%;left:23%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.section{padding:85px 0}
+.section-head{text-align:center;margin-bottom:42px}
+.section-head .eyebrow{font-size:11px}
+.section-head h2{font-size:34px;margin:10px 0}
+.section-head p{color:var(--muted);margin:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.stat-card,.culture-card,.benefit-card,.job-card{
+  border:1px solid var(--line);background:linear-gradient(145deg,#0d1b2d,#091321);
+}
+.stat-card{padding:25px;text-align:center}
+.stat-card strong{font-size:30px;color:var(--cyan);display:block}
+.stat-card span{font-size:12px;color:var(--muted)}
+.filters{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:25px}
+.filter-buttons{display:flex;gap:9px;flex-wrap:wrap}
+.filter-btn{
+  padding:9px 16px;background:#0c1b2c;border:1px solid var(--line);
+  color:#a9bfd5;font-size:13px;
+}
+.filter-btn.active,.filter-btn:hover{border-color:var(--cyan);color:var(--cyan);background:#10304a}
+.search{padding:10px 15px;background:#0b1929;border:1px solid var(--line);color:white;min-width:230px}
+.jobs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.job-card{padding:24px;transition:.25s}
+.job-card:hover{transform:translateY(-4px);border-color:#279bd5;box-shadow:var(--glow)}
+.job-top{display:flex;justify-content:space-between;gap:15px}
+.job-card h3{margin:0;font-size:19px}
+.job-tag{font-size:11px;color:var(--cyan);border:1px solid #2a779e;padding:3px 9px;height:max-content}
+.job-card p{color:var(--muted);font-size:13px;min-height:42px}
+.job-info{display:flex;gap:17px;flex-wrap:wrap;color:#9db2c8;font-size:12px}
+.job-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
+.salary{color:#64d8ff;font-weight:800;font-size:14px}
+.text-btn{background:none;border:0;color:var(--cyan);font-weight:700}
+.empty{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)}
+.culture-grid,.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.culture-card,.benefit-card{padding:26px}
+.card-icon{font-size:28px;color:var(--cyan)}
+.culture-card h3,.benefit-card h3{margin:12px 0 7px}
+.culture-card p,.benefit-card p{font-size:13px;color:var(--muted);margin:0}
+.join-banner{
+  padding:55px 35px;text-align:center;border:1px solid #2386b5;
+  background:radial-gradient(ellipse at center,#123b5b,#091726 70%);
+  box-shadow:var(--glow);
+}
+.join-banner h2{font-size:32px;margin:0 0 10px}
+.join-banner p{color:#a8bfd5;margin:0 0 25px}
+.footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer strong{color:#d9edff}
+.modal{
+  position:fixed;inset:0;background:#020711d9;z-index:50;
+  display:none;align-items:center;justify-content:center;padding:18px;
+}
+.modal.show{display:flex}
+.modal-box{
+  width:min(680px,100%);max-height:88vh;overflow:auto;
+  background:#0b192a;border:1px solid #28658a;padding:28px;
+  box-shadow:0 0 60px #0009;
+}
+.modal-head{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.close{background:none;border:1px solid var(--line);color:white;padding:6px 12px}
+.modal-box p,.modal-box li{color:#b1c4d8;font-size:14px}
+.modal-box h3{color:var(--cyan);font-size:15px;margin-bottom:5px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;color:#b9cce0}
+.field input,.field select,.field textarea{
+  width:100%;background:#071321;border:1px solid #25435e;
+  color:white;padding:12px;outline:none;
+}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--cyan)}
+.field textarea{min-height:100px;resize:vertical}
+.hint{font-size:11px;color:#829bb4}
+.form-message{padding:12px;background:#102a3d;color:#aeeaff;font-size:13px;display:none;margin-top:15px}
+.form-message.show{display:block}
+@media(max-width:800px){
+ .hero-grid{grid-template-columns:1fr}.hero-visual{min-height:300px}
+ .nav-links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#071321;flex-direction:column}
+ .nav-links.open{display:flex}.menu-btn{display:block}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .culture-grid,.benefits-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+ .hero{padding:70px 0 55px}.hero-meta{gap:20px}.hero-meta strong{font-size:21px}
+ .jobs-grid,.culture-grid,.benefits-grid{grid-template-columns:1fr}
+ .section{padding:60px 0}.section-head h2{font-size:27px}
+ .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+ .join-banner{padding:38px 20px}.join-banner h2{font-size:25px}
+ .footer-inner{display:block}.footer-inner div{margin-bottom:10px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+ <div class="container nav-inner">
+  <a class="logo" href="#">
+   <div class="logo-mark"><span>K</span></div>
+   <div>KMD 卡米达<small>CAREERS CENTER</small></div>
+  </a>
+  <nav class="nav-links" id="navLinks">
+   <a href="#about">关于我们</a>
+   <a href="#jobs">招聘岗位</a>
+   <a href="#culture">企业文化</a>
+   <a href="#benefits">员工福利</a>
+   <a href="#apply" class="btn">加入我们 ↗</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="打开菜单">☰</button>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">KMD CAREERS / 2026</div>
+   <h1>让创意<br>成为<span>未来的力量</span></h1>
+   <p>我们相信，优秀的作品来自优秀的人。KMD卡米达正在寻找富有创造力、热爱技术、敢于突破边界的伙伴，一起探索数字世界的更多可能。</p>
+   <div class="hero-actions">
+    <a class="btn" href="#jobs">探索招聘岗位 ↗</a>
+    <a class="btn btn-outline" href="#about">了解KMD</a>
+   </div>
+   <div class="hero-meta">
+    <div class="meta"><strong>∞</strong><span>无限创造可能</span></div>
+    <div class="meta"><strong>01</strong><span>共同成长旅程</span></div>
+    <div class="meta"><strong>未来</strong><span>由我们共同定义</span></div>
+   </div>
+  </div>
+  <div class="hero-visual">
+   <span class="orbit-label one">INNOVATION</span>
+   <span class="orbit-label two">TECHNOLOGY</span>
+   <span class="orbit-label three">CREATIVITY / 2026</span>
+   <div class="core"><span>KMD</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">WHO WE ARE</div>
+   <h2>关于 KMD 卡米达</h2>
+   <p>以技术为引擎，以创意为方向，探索数字娱乐的边界。</p>
+  </div>
+  <div class="stats">
+   <div class="stat-card"><strong>GAME</strong><span>游戏研发与创新</span></div>
+   <div class="stat-card"><strong>TECH</strong><span>前沿技术探索</span></div>
+   <div class="stat-card"><strong>CREATE</strong><span>数字内容创造</span></div>
+   <div class="stat-card"><strong>TEAM</strong><span>开放协作文化</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="jobs">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">OPEN POSITIONS</div>
+   <h2>寻找下一位同行者</h2>
+   <p>选择你热爱的方向，让能力在真实项目中闪光。</p>
+  </div>
+  <div class="filters">
+   <div class="filter-buttons" id="filters">
+    <button class="filter-btn active" data-category="全部">全部岗位</button>
+    <button class="filter-btn" data-category="研发">技术研发</button>
+    <button class="filter-btn" data-category="设计">美术设计</button>
+    <button class="filter-btn" data-category="策划">游戏策划</button>
+    <button class="filter-btn" data-category="运营">运营职能</button>
+   </div>
+   <input class="search" id="searchInput" type="search" placeholder="搜索岗位名称...">
+  </div>
+  <div class="jobs-grid" id="jobsGrid"></div>
+ </div>
+</section>
+
+<section class="section" id="culture">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">OUR CULTURE</div>
+   <h2>在这里，创造不止于想象</h2>
+   <p>让每一个想法都有机会被看见，让每一份努力都值得。</p>
+  </div>
+  <div class="culture-grid">
+   <article class="culture-card"><div class="card-icon">✦</div><h3>大胆创新</h3><p>鼓励探索新技术、新玩法与新表达，不被固有边界限制。</p></article>
+   <article class="culture-card"><div class="card-icon">◇</div><h3>开放协作</h3><p>尊重不同观点，重视团队合作，让优秀想法共同落地。</p></article>
+   <article class="culture-card"><div class="card-icon">⌁</div><h3>持续成长</h3><p>通过项目实践、经验交流和知识分享，不断提升专业能力。</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="benefits">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">GROW WITH US</div>
+   <h2>与你一起成长</h2>
+   <p>以下为项目设定中的福利方向，实际制度以正式公告为准。</p>
+  </div>
+  <div class="benefits-grid">
+   <article class="benefit-card"><div class="card-icon">▣</div><h3>学习与培训</h3><p>专业课程、技术分享与项目复盘，支持持续学习。</p></article>
+   <article class="benefit-card"><div class="card-icon">⌂</div><h3>灵活协作</h3><p>倡导高效沟通与合理安排，关注工作与生活平衡。</p></article>
+   <article class="benefit-card"><div class="card-icon">✧</div><h3>项目激励</h3><p>鼓励成果导向，优秀贡献可获得相应认可与激励。</p></article>
+   <article class="benefit-card"><div class="card-icon">◎</div><h3>团队活动</h3><p>通过团队交流与创意活动，建立积极的协作氛围。</p></article>
+   <article class="benefit-card"><div class="card-icon">⌘</div><h3>成长通道</h3><p>提供专业能力发展与项目管理方向的成长空间。</p></article>
+   <article class="benefit-card"><div class="card-icon">✚</div><h3>开放环境</h3><p>尊重个体差异，重视每一位成员的想法与价值。</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="apply">
+ <div class="container">
+  <div class="join-banner">
+   <div class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div>
+   <h2>准备好加入 KMD 了吗？</h2>
+   <p>带上你的热情、创意与能力，与我们一起创造下一种可能。</p>
+   <button class="btn" id="openApply">投递简历 ↗</button>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="footer">
+ <div class="container footer-inner">
+  <div><strong>KMD 卡米达</strong> · CAREERS CENTER</div>
+  <div>寻找创造者 · 共赴下一程</div>
+  <div>© 2026 KMD 卡米达 · 虚构项目演示网站</div>
+ </div>
+</footer>
+
+<!-- 岗位详情弹窗 -->
+<div class="modal" id="jobModal">
+ <div class="modal-box">
+  <div class="modal-head"><h2 id="detailTitle">岗位详情</h2><button class="close" data-close="jobModal">关闭 ✕</button></div>
+  <div id="detailContent"></div>
+  <button class="btn" id="detailApply">申请该岗位 ↗</button>
+ </div>
+</div>
+
+<!-- 简历投递弹窗 -->
+<div class="modal" id="applyModal">
+ <div class="modal-box">
+  <div class="modal-head"><h2>加入 KMD</h2><button class="close" data-close="applyModal">关闭 ✕</button></div>
+  <p>填写以下信息，完成演示版简历投递表单。</p>
+  <form id="applyForm">
+   <div class="form-grid">
+    <div class="field"><label for="name">姓名 *</label><input id="name" name="name" required maxlength="30" placeholder="请输入姓名"></div>
+    <div class="field"><label for="email">电子邮箱 *</label><input id="email" name="email" type="email" required placeholder="name@example.com"></div>
+    <div class="field"><label for="phone">联系电话 *</label><input id="phone" name="phone" type="tel" required pattern="[0-9+() -]{6,20}" placeholder="请输入联系电话"></div>
+    <div class="field"><label for="position">申请岗位 *</label><select id="position" name="position" required></select></div>
+    <div class="field full"><label for="experience">个人介绍 / 项目经历</label><textarea id="experience" name="experience" maxlength="1500" placeholder="介绍你的技能、经验和作品..."></textarea></div>
+    <div class="field full"><label for="resume">简历文件（PDF/DOC/DOCX）</label><input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx"><span class="hint">演示版仅在本地选择文件，不会上传。建议文件不超过 5MB。</span></div>
+   </div>
+   <div class="form-message" id="formMessage" role="status"></div>
+   <button class="btn" type="submit" style="margin-top:20px">提交申请 ↗</button>
+  </form>
+ </div>
+</div>
+
+<script>
+"use strict";
+
+/* 示例岗位数据：请按实际招聘需求修改 */
+const jobs = [
+ {id:1,title:"前端开发工程师",category:"研发",level:"初级 / 中级",type:"全职",location:"示例地点 / 可协商",salary:"面议",
+  desc:"参与官方网站、游戏运营平台及内部工具的前端开发。",
+  duties:["负责 Web 前端页面开发与维护","与设计及后端团队协作完成产品功能","持续优化页面性能与用户体验"],
+  requirements:["熟悉 HTML、CSS、JavaScript","了解至少一种前端框架更佳","具备良好的沟通能力与学习能力"]},
+ {id:2,title:"游戏客户端开发工程师",category:"研发",level:"中级",type:"全职",location:"示例地点 / 可协商",salary:"面议",
+  desc:"参与游戏客户端系统开发、功能实现与性能优化。",
+  duties:["参与游戏客户端功能模块开发","协助处理运行性能及兼容性问题","参与技术方案讨论与代码维护"],
+  requirements:["熟悉 C++、C# 或相关开发语言","了解 Unity 或 Unreal Engine 更佳","具备良好的问题分析能力"]},
+ {id:3,title:"AI算法工程师",category:"研发",level:"初级 / 中级",type:"全职",location:"示例地点 / 可协商",salary:"面议",
+  desc:"探索人工智能在游戏与数字内容领域的应用。",
+  duties:["参与 AI 算法实验与原型开发","协助搭建数据处理及模型评估流程","研究智能交互与生成式 AI 应用"],
+  requirements:["掌握 Python 基础","了解机器学习或深度学习基础","具备实验记录与分析能力"]},
+ {id:4,title:"3D角色美术设计师",category:"设计",level:"中级",type:"全职",location:"示例地点 / 可协商",salary:"面议",
+  desc:"参与原创游戏角色、道具及视觉资产制作。",
+  duties:["制作角色模型与相关美术资源","配合策划及技术团队完成资产落地","维护项目美术规范与资源质量"],
+  requirements:["熟悉 Blender、Maya 或同类软件","具备良好的造型与审美能力","有个人作品集更佳"]},
+ {id:5,title:"UI/UX设计师",category:"设计",level:"初级 / 中级",type:"全职",location:"示例地点 / 可协商",salary:"面议",
+  desc:"负责游戏界面、交互流程与数字产品体验设计。",
+  duties:["完成界面视觉与交互设计","制作设计规范及交付文件","参与产品体验优化与可用性讨论"],
+  requirements:["熟悉 Figma 或同类设计工具","具备视觉设计与交互基础","能够清晰表达设计思路"]},
+ {id:6,title:"游戏系统策划",category:"策划",level:"初级 / 中级",type:"全职",location:"示例地点 / 可协商",salary:"面议",
+  desc:"参与游戏玩法、数值系统与规则设计。",
+  duties:["设计游戏核心机制与系统规则","撰写策划文档并跟进功能实现","参与测试、反馈整理与迭代"],
+  requirements:["热爱游戏并具备系统性思维","具备文档表达与逻辑分析能力","有游戏设计作品更佳"]},
+ {id:7,title:"游戏关卡策划",category:"策划",level:"初级",type:"全职",location:"示例地点 / 可协商",salary:"面议",
+  desc:"参与关卡流程、任务目标与游戏体验设计。",
+  duties:["设计关卡流程、目标和挑战","使用编辑器搭建关卡原型","跟进测试并调整关卡体验"],
+  requirements:["对游戏关卡设计有兴趣","具备空间想象与叙事能力","有相关作品或项目经历更佳"]},
+ {id:8,title:"社区与内容运营",category:"运营",level:"初级",type:"全职",location:"示例地点 / 可协商",salary:"面议",
+  desc:"参与品牌内容建设、玩家社区维护与活动策划。",
+  duties:["协助制定内容与社区运营计划","策划线上活动并整理用户反馈","跟踪运营数据并输出分析"],
+  requirements:["具备良好的文字表达能力","熟悉主流内容平台与社区文化","有活动策划经验更佳"]}
+];
+
+const jobsGrid=document.getElementById("jobsGrid");
+const searchInput=document.getElementById("searchInput");
+const filters=document.getElementById("filters");
+let currentCategory="全部";
+let selectedJob=null;
+
+function renderJobs(){
+ const keyword=searchInput.value.trim().toLowerCase();
+ const result=jobs.filter(job=>{
+  const categoryMatch=currentCategory==="全部"||job.category===currentCategory;
+  const keywordMatch=(job.title+job.desc+job.category).toLowerCase().includes(keyword);
+  return categoryMatch&&keywordMatch;
+ });
+ jobsGrid.innerHTML="";
+ if(!result.length){
+  jobsGrid.innerHTML='<div class="empty">没有找到匹配的岗位，请尝试其他关键词。</div>';
+  return;
+ }
+ result.forEach(job=>{
+  const card=document.createElement("article");
+  card.className="job-card";
+  card.innerHTML=`
+   <div class="job-top"><h3>${job.title}</h3><span class="job-tag">${job.category}</span></div>
+   <p>${job.desc}</p>
+   <div class="job-info"><span>◈ ${job.level}</span><span>⌂ ${job.location}</span><span>▣ ${job.type}</span></div>
+   <div class="job-bottom"><span class="salary">${job.salary}</span><button class="text-btn" data-job="${job.id}">查看详情 →</button></div>`;
+  jobsGrid.appendChild(card);
+ });
+}
+
+function openJob(id){
+ const job=jobs.find(item=>item.id===Number(id));
+ if(!job)return;
+ selectedJob=job;
+ document.getElementById("detailTitle").textContent=job.title;
+ document.getElementById("detailContent").innerHTML=`
+  <p>${job.desc}</p>
+  <p><strong>岗位类别：</strong>${job.category}　<strong>工作性质：</strong>${job.type}</p>
+  <p><strong>经验要求：</strong>${job.level}　<strong>工作地点：</strong>${job.location}</p>
+  <p><strong>薪资待遇：</strong>${job.salary}</p>
+  <h3>岗位职责</h3><ul>${job.duties.map(x=>`<li>${x}</li>`).join("")}</ul>
+  <h3>任职要求</h3><ul>${job.requirements.map(x=>`<li>${x}</li>`).join("")}</ul>
+  <p class="hint">以上岗位信息为虚构项目演示内容，不构成真实招聘承诺。</p>`;
+ showModal("jobModal");
+}
+
+function showModal(id){document.getElementById(id).classList.add("show")}
+function hideModal(id){document.getElementById(id).classList.remove("show")}
+
+function openApplication(jobTitle){
+ const select=document.getElementById("position");
+ select.innerHTML='<option value="">请选择岗位</option>'+jobs.map(j=>
+  `<option value="${j.title}">${j.title}</option>`).join("");
+ if(jobTitle)select.value=jobTitle;
+ hideModal("jobModal");
+ document.getElementById("formMessage").classList.remove("show");
+ showModal("applyModal");
+}
+
+filters.addEventListener("click",event=>{
+ const button=event.target.closest("[data-category]");
+ if(!button)return;
+ currentCategory=button.dataset.category;
+ filters.querySelectorAll(".filter-btn").forEach(btn=>btn.classList.toggle("active",btn===button));
+ renderJobs();
+});
+searchInput.addEventListener("input",renderJobs);
+jobsGrid.addEventListener("click",event=>{
+ const button=event.target.closest("[data-job]");
+ if(button)openJob(button.dataset.job);
+});
+
+document.getElementById("detailApply").addEventListener("click",()=>{
+ if(selectedJob)openApplication(selectedJob.title);
+});
+document.getElementById("openApply").addEventListener("click",()=>openApplication(""));
+document.querySelectorAll("[data-close]").forEach(button=>{
+ button.addEventListener("click",()=>hideModal(button.dataset.close));
+});
+document.querySelectorAll(".modal").forEach(modal=>{
+ modal.addEventListener("click",event=>{
+  if(event.target===modal)hideModal(modal.id);
+ });
+});
+document.addEventListener("keydown",event=>{
+ if(event.key==="Escape")document.querySelectorAll(".modal.show").forEach(m=>hideModal(m.id));
+});
+
+document.getElementById("applyForm").addEventListener("submit",event=>{
+ event.preventDefault();
+ const form=event.currentTarget;
+ const file=document.getElementById("resume").files[0];
+ const message=document.getElementById("formMessage");
+ if(file){
+  const allowed=/\.(pdf|doc|docx)$/i.test(file.name);
+  if(!allowed){message.textContent="文件格式不正确，请选择 PDF、DOC 或 DOCX 文件。";message.classList.add("show");return;}
+  if(file.size>5*1024*1024){message.textContent="文件超过 5MB，请压缩后重新选择。";message.classList.add("show");return;}
+ }
+ if(!form.reportValidity())return;
+ message.textContent="表单验证成功！当前网站为前端演示版，资料尚未上传或发送。接入后端或招聘邮箱后，才能正式接收简历。";
+ message.classList.add("show");
+});
+
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>navLinks.classList.toggle("open"));
+navLinks.querySelectorAll("a").forEach(link=>{
+ link.addEventListener("click",()=>navLinks.classList.remove("open"));
+});
+
+renderJobs();
+</script>
+</body>
+</html>
